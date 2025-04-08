@@ -65,7 +65,7 @@ def zad8():
 
 def zad9():
     roi = img1[h//2:h//2+300,w//2:w//2+300]
-    cv2.imwrite("zad9.jpg", roi)
+    cv2.imwrite("cropped_image.jpg", roi)
 
 def main():
     zad1()
