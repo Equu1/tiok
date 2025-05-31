@@ -35,9 +35,34 @@ def zad3():
     cv2.waitKey(0)
 
 def zad4():
-    
+    B, G, R = cv2.split(img)
+
+    R_filtered = cv2.add(R, 30)
+    G_filtered = cv2.subtract(G, 20)
+    B_filtered = cv2.add(B, 10)
+
+    filtered_image = cv2.merge([B_filtered, G_filtered, R_filtered])
+
+    cv2.imshow('Original', img)
+    cv2.imshow('Instagram Filter', filtered_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+def zad5():
+    img2 = cv2.imread("9.1.jpg")
+
+    diff = cv2.absdiff(img, img2)
+
+    cv2.imshow('Image 1', img)
+    cv2.imshow('Image 2', img2)
+    cv2.imshow('Difference', diff)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
 def main():
-    zad3()
+    zad5()
 
 if __name__ == "__main__":
     main()
